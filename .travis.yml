@@ -25,7 +25,7 @@ before_script:
 
 script:
   - vendor/bin/php-cs-fixer fix app --dry-run --rules=@PSR2
-  - vendor/bin/phpunit --testdox
+  - vendor/bin/phpunit
 
 after_script:
   - bash <(curl -s https://codecov.io/bash)

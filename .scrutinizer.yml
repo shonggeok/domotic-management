@@ -38,7 +38,7 @@ build:
     override:
       - vendor/bin/php-cs-fixer fix app --dry-run --rules=@PSR2
       -
-        command: vendor/bin/phpunit --testdox --coverage-clover=clover-coverage
+        command: vendor/bin/phpunit --coverage-clover=clover-coverage
         coverage:
           file: clover-coverage
           format: clover
