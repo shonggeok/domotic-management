@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>@yield('page_title')</title>
 
     <!-- Main CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" media="all">
-    <!-- Main Theme CSS-->
-    <link href="{{ asset('css/theme.css') }}" rel="stylesheet" media="all">
 
 </head>

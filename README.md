@@ -6,13 +6,23 @@ Domotic Management is a domotic panel, written in PHP with Laravel, that helps t
 It provides several features. See wiki for more details.
 
 ## Features
+(Others will be ready ASAP)
 + Get **public IP** of server
+
+# TODO
++ Force change username and password
 
 ### Setup
 + Create a database
 + Fill the data in `.env.example`
 + Copy `.env.example` to `.env`
-+ Run `php artisan db:migrate`
++ Run `php artisan migrate`
++ Run `php artisan db:seed`
+
+Default login data:
+
+- Username: `admin`
+- Password: `password`
 
 #### Contributions
 All contributes are welcome! See CONTRIBUTING.md for more informations.
