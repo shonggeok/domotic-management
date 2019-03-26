@@ -41,7 +41,7 @@ class AuthTest extends TestCase
         $this->assertFalse($check);
 
         $response = $this->followingRedirects()->post(Route('logout'));
-        $response->assertViewIs('v100.pages.login');
+        $response->assertViewIs('v200.pages.login');
 
         $check = Auth::check();
         $this->assertFalse($check);
@@ -64,7 +64,7 @@ class AuthTest extends TestCase
         $response->assertStatus(302);
 
         $response = $this->followingRedirects()->post(Route('login'),$data);
-        $response->assertViewIs('v100.pages.login');
+        $response->assertViewIs('v200.pages.login');
     }
 
     /**
@@ -84,7 +84,7 @@ class AuthTest extends TestCase
         $response->assertStatus(302);
 
         $response = $this->followingRedirects()->post(Route('login'),$data);
-        $response->assertViewIs('v100.pages.dashboard');
+        $response->assertViewIs('v200.pages.dashboard');
     }
 
     /**
@@ -99,7 +99,7 @@ class AuthTest extends TestCase
         $response->assertRedirect(Route('login'));
 
         $following = $this->followingRedirects()->get(Route('dashboard'));
-        $following->assertViewIs('v100.pages.login');
+        $following->assertViewIs('v200.pages.login');
     }
 
     /**
@@ -112,7 +112,7 @@ class AuthTest extends TestCase
         $this->withoutExceptionHandling();
         $response = $this->get(Route('login'));
         $response->assertStatus(200);
-        $response->assertViewIs('v100.pages.login');
+        $response->assertViewIs('v200.pages.login');
     }
 
 }

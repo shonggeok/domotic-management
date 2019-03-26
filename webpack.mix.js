@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js([
         'resources/js/app.js',
-        'resources/js/logout.js'
+        'resources/js/logout.js',
+        'resources/js/theme.v200.js'
     ],'public/js')
+    .styles('resources/css/theme.v200.css', 'public/css/theme.css')
     .sass('resources/sass/app.scss', 'public/css')
