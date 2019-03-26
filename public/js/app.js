@@ -36660,6 +36660,24 @@ $("#link-logout-form").on('click', function (e) {
 
 /***/ }),
 
+/***/ "./resources/js/theme.v200.js":
+/*!************************************!*\
+  !*** ./resources/js/theme.v200.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).on("click", "ul.nav li.parent > a ", function () {
+  $(this).find('i').toggleClass("fa-minus");
+});
+$(".sidebar span.icon").find('em:first').addClass("fa-plus");
+$("#menu-toggle").click(function (e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -36672,14 +36690,15 @@ $("#link-logout-form").on('click', function (e) {
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/logout.js ./resources/sass/app.scss ***!
-  \**************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/logout.js ./resources/js/theme.v200.js ./resources/sass/app.scss ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\ARCHIVI\PROGETTI_GIT\domotic-management\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! D:\ARCHIVI\PROGETTI_GIT\domotic-management\resources\js\logout.js */"./resources/js/logout.js");
+__webpack_require__(/*! D:\ARCHIVI\PROGETTI_GIT\domotic-management\resources\js\theme.v200.js */"./resources/js/theme.v200.js");
 module.exports = __webpack_require__(/*! D:\ARCHIVI\PROGETTI_GIT\domotic-management\resources\sass\app.scss */"./resources/sass/app.scss");
 
 

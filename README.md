@@ -27,15 +27,13 @@ It provides several features. See wiki for more details.
 (Others will be ready ASAP)
 + Get **public IP** of server
 
-# TODO
-+ Force change username and password
-
 ### Setup
 + Create a database
 + Fill the data in `.env.example`
 + Copy `.env.example` to `.env`
 + Run `php artisan migrate`
 + Run `php artisan db:seed`
++ Run `npm run dev`
 
 Default login data:
 
@@ -57,3 +55,4 @@ If you use `PhpStorm`, you could access to Clover Code Coverage directly to [htt
 
 #### Thanks to
 [php-ipify](https://github.com/benjamin-smith/php-ipify)
+[Medialoot](https://medialoot.com/preview/bootstrap-4-dashboard-premium/index.html)

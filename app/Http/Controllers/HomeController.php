@@ -26,6 +26,6 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        return view('v100.pages.dashboard');
+        return view('v200.pages.dashboard');
     }
 }

@@ -15,3 +15,4 @@ yarn-error.log
 .idea
 adminer.php
 /logs
+/public/fonts/vendor/font-awesome
