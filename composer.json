@@ -16,11 +16,12 @@
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
+        "friendsofphp/php-cs-fixer": "^2.14",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
-        "phpunit/phpunit": "^7.5",
-        "friendsofphp/php-cs-fixer": "^2.14"
+        "php-coveralls/php-coveralls": "^2.1",
+        "phpunit/phpunit": "^7.5"
     },
     "config": {
         "optimize-autoloader": true,
@@ -49,6 +50,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "coverall": "php-coveralls --coverage_clover=./logs/clover.xml --json_path=./logs/coveralls-upload.json -v",
         "test": "phpunit",
         "check-style": "php-cs-fixer fix app --dry-run --rules=@PSR2",
         "fix-style": "php-cs-fixer fix app --rules=@PSR2",
