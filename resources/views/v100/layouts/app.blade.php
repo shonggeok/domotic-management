@@ -13,5 +13,8 @@
             @yield('content')
         </div>
         @include('v100.fragments.scripts')
+        @auth
+            @include('v100.fragments.logout')
+        @endauth
     </body>
 </html>

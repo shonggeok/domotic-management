@@ -2,10 +2,7 @@ filter:
   paths:
     - "app/"
   excluded_paths:
-    - "app/Http/Controllers/Auth"
     - "app/Http/Middleware/Authenticate.php"
-    - "app/Http/Middleware/RedirectIfAuthenticated.php"
-    - "app/Exceptions/Handler.php"
     - "app/Providers/BroadcastServiceProvider.php"
 build:
   environment:

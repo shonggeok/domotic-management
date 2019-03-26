@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('v100.pages.login');
-});
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/', 'Auth\LoginController@login')->name('login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
