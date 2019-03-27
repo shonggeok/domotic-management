@@ -18,12 +18,17 @@
         @auth
             @include('v200.fragments.menu')
         @endauth
-            <main class="{{ $main_class }}">
-                @auth
-                    @include('v200.fragments.header')
-                @endauth
-                @yield('main_content')
-            </main>
+        <main class="{{ $main_class }}">
+            @auth
+                @include('v200.fragments.header')
+            @endauth
+            @yield('main_content')
+            <section class="row">
+                <div class="col-12 mt-1 mb-4">
+                    <p>Template by <a href="https://medialoot.com/preview/bootstrap-4-dashboard-premium/index.html">Medialoot</a></p>
+                </div>
+            </section>
+        </main>
     </div>
 </div>
 

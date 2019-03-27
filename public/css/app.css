@@ -13708,6 +13708,23 @@ a.text-dark:focus {
   clip: auto;
 }
 
+div.card-header > p {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+div.card-block > p {
+  font-weight: bold;
+  font-size: 300%;
+}
+
+div.card-block > p + p {
+  font-weight: normal;
+  font-size: 100%;
+}
+
 form#logout-form {
   display: none;
 }
