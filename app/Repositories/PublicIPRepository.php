@@ -28,9 +28,19 @@ class PublicIPRepository extends BaseRepository implements PublicIPInterface
         'ip_address'
     ];
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|null $model
+     */
+    public function getLastRecord()
+    {
+        $model = $this->all()->last();
+        return $model;
+    }
+
     /**
      * @param array $data
-     * @return \Illuminate\Database\Eloquent\Collection $collection
+     * @return \Illuminate\Database\Eloquent\Collection $model
      */
     public function createOrUpdate(array $data)
     {

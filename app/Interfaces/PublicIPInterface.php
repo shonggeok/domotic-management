@@ -10,4 +10,15 @@ namespace App\Interfaces;
 
 interface PublicIPInterface extends BaseInterface
 {
+
+    /**
+     * @return mixed
+     */
+    public function getLastRecord();
+
+    /**
+     * @param array $data
+     * @return mixed
+     */
+    public function createOrUpdate(array $data);
 }
