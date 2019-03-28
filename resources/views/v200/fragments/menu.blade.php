@@ -5,5 +5,20 @@
         <li class="nav-item">
             <a class="nav-link active" href="{{ Route('dashboard') }}"><em class="fa fa-dashboard"></em> Dashboard</a>
         </li>
+
+        <li class="parent nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#sub-item-1" aria-expanded="true">
+                <em class="fa fa-cog">&nbsp;</em> {{ __('common.settings') }}
+                <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right" aria-expanded="true">
+                    <i class="fa fa-plus fa-minus"></i>
+                </span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ Route('password_show') }}">{{ __('common.change') }} password</a>
+                </li>
+            </ul>
+        </li>
+
     </ul>
 </nav>

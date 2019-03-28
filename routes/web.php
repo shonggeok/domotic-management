@@ -16,3 +16,6 @@ Route::post('/', 'Auth\LoginController@login')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
+Route::get('/user/password', 'Settings\PasswordController@show')->name('password_show');
+Route::patch('/user/password', 'Settings\PasswordController@update')->name('password_update');
