@@ -13725,6 +13725,15 @@ div.card-block > p + p {
   font-size: 100%;
 }
 
+h3.card-title,
+.col-form-label {
+  text-transform: capitalize;
+}
+
+div.alert > p {
+  margin-bottom: 0;
+}
+
 form#logout-form {
   display: none;
 }

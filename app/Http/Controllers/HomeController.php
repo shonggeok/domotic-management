@@ -12,12 +12,6 @@ use App\Gateways\PublicIPGateway;
 
 class HomeController extends Controller
 {
-
-    /**
-     * @var \App\Gateways\PublicIPGateway
-     */
-    private $gateway;
-
     /**
      * HomeController constructor.
      */
@@ -35,21 +29,5 @@ class HomeController extends Controller
     {
         $public_ip = $this->getGateway()->getLastRecord();
         return view('v200.pages.dashboard')->with('public_ip', $public_ip);
-    }
-
-    /**
-     * @return \App\Gateways\PublicIPGateway
-     */
-    private function getGateway(): PublicIPGateway
-    {
-        return $this->gateway;
-    }
-
-    /**
-     * @param \App\Gateways\PublicIPGateway $gateway
-     */
-    private function setGateway(PublicIPGateway $gateway): void
-    {
-        $this->gateway = $gateway;
     }
 }
