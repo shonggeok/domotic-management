@@ -30,7 +30,7 @@ class PublicIPRepository extends BaseRepository implements PublicIPInterface
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|null $model
+     * @return \App\Repositories\PublicIPRepository|null $model
      */
     public function getLastRecord()
     {
@@ -40,7 +40,7 @@ class PublicIPRepository extends BaseRepository implements PublicIPInterface
 
     /**
      * @param array $data
-     * @return \Illuminate\Database\Eloquent\Collection $model
+     * @return \App\Repositories\PublicIPRepository $model
      */
     public function createOrUpdate(array $data)
     {

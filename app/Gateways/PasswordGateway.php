@@ -45,7 +45,6 @@ class PasswordGateway extends BaseGateway
         $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
-            // return array
             return $validator->errors()->all();
         } else {
             $update = $this->getInterface()->updatePassword($data, $user_id);

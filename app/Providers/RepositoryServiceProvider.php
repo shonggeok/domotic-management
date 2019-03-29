@@ -15,13 +15,13 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'App\Interfaces\PasswordInterface', // Interface
-            'App\Repositories\PasswordRepository' // Eloquent
+            'App\Interfaces\PasswordInterface',
+            'App\Repositories\PasswordRepository'
         );
 
         $this->app->bind(
-            'App\Interfaces\PublicIPInterface', // Interface
-            'App\Repositories\PublicIPRepository' // Eloquent
+            'App\Interfaces\PublicIPInterface',
+            'App\Repositories\PublicIPRepository'
         );
     }
 }
