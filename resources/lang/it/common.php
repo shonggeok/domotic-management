@@ -11,6 +11,9 @@ return [
     'old_f' => 'vecchia',
     'old_password_doesnt_match' => 'la vecchia password è errata',
     'operation_completed_successfully' => 'operazione completata con successo',
+    'operation_failed' => 'operazione fallita',
     'settings' => 'impostazioni',
+    'timezone' => 'fuso orario',
     'update' => 'aggiorna',
+    'user' => 'utente',
 ];

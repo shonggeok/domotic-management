@@ -16,6 +16,7 @@
             <ul class="children collapse" id="sub-item-1">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ Route('password_show') }}">{{ __('common.change') }} password</a>
+                    <a class="nav-link" href="{{ Route('settings_user') }}">{{ __('common.settings') }} {{ __('common.user') }}</a>
                 </li>
             </ul>
         </li>

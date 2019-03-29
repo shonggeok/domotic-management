@@ -15,6 +15,11 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
+            'App\Interfaces\SettingsInterface',
+            'App\Repositories\Settings\SettingsUserRepository'
+        );
+
+        $this->app->bind(
             'App\Interfaces\PasswordInterface',
             'App\Repositories\PasswordRepository'
         );

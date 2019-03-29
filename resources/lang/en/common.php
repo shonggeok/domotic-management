@@ -11,6 +11,9 @@ return [
     'old_f' => 'old',
     'old_password_doesnt_match' => 'old password is wrong',
     'operation_completed_successfully' => 'operation completed successfully',
+    'operation_failed' => 'operation failed',
     'settings' => 'settings',
+    'timezone' => 'timezone',
     'update' => 'update',
+    'user' => 'user',
 ];
