@@ -21,6 +21,41 @@ class PublicIPTest extends TestCase
     use WithFaker;
 
     /**
+     * Test we cannot read last record if not present
+     *
+     * @return void
+     */
+    public function test_can_read_last_record_if_not_present()
+    {
+        $this->withoutExceptionHandling();
+
+        $gateway = $this->app->make('App\Gateways\PublicIPGateway');
+        $record = $gateway->getLastRecord();
+        $this->assertNull($record);
+
+    }
+
+    /**
+     * Test we can read last record if present
+     *
+     * @return void
+     */
+    public function test_can_read_last_record()
+    {
+        $this->withoutExceptionHandling();
+
+        $ip_address = $this->faker->ipv4();
+        $data = [
+            'ip_address' => $ip_address
+        ];
+        factory(PublicIPRepository::class)->create($data);
+        $gateway = $this->app->make('App\Gateways\PublicIPGateway');
+        $record = $gateway->getLastRecord();
+        $this->assertTrue($record->count() === 1);
+
+    }
+
+    /**
      * Test cannot update data if validator fails
      *
      * @return void

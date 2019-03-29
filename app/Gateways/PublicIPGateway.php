@@ -33,6 +33,15 @@ class PublicIPGateway extends BaseGateway
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Collection|null $model
+     */
+    public function getLastRecord()
+    {
+        $model = $this->getInterface()->getLastRecord();
+        return $model;
+    }
+
+    /**
      * @return true|string
      */
     public function updatePublicIp()
