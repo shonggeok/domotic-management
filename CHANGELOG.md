@@ -1,5 +1,8 @@
+# 0.3.0
++ Add settings page for user
+
 # 0.2.0
-# 29-03-2019
+## 29-03-2019
 + Add bootstrap layout
 + Add Public IP on dashboard
 + Enable change password
