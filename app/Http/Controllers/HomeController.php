@@ -19,7 +19,6 @@ class HomeController extends Controller
     public function __construct(PublicIPGateway $gateway)
     {
         $this->middleware('auth');
-        $this->middleware('user-settings');
         $this->setGateway($gateway);
     }
 
