@@ -21,6 +21,7 @@ class Controller extends BaseController
      */
     protected function setGateway($gateway)
     {
+        $this->middleware('user-settings');
         $this->gateway = $gateway;
     }
 
