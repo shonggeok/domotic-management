@@ -27,10 +27,10 @@ class PasswordRepository extends BaseRepository implements PasswordInterface
      */
     public function updatePassword(array $data, int $user_id)
     {
-        $is_valid = $this->validatePassword($data['old_password'], $user_id);
+        $is_valid = $this->validatePassword($data[ 'old_password' ], $user_id);
         if ($is_valid === true) {
             $user = $this->find($user_id);
-            $user->password = Hash::make($data['new_password']);
+            $user->password = Hash::make($data[ 'new_password' ]);
             $user->save();
         }
         return $is_valid;
@@ -47,7 +47,7 @@ class PasswordRepository extends BaseRepository implements PasswordInterface
         $is_valid = false;
         $user = $this->where('id', $user_id)->get();
         if ($user->count() === 1) {
-            if (Hash::check($old_password, $user[0]->password)) {
+            if (Hash::check($old_password, $user[ 0 ]->password)) {
                 $is_valid = true;
             }
         }
