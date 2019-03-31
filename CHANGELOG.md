@@ -1,6 +1,8 @@
 # 0.3.0
 + Add settings page for user
 + Retrieve user settings
++ Add date format user option
++ Add language user option
 
 # 0.2.0
 + Add bootstrap layout
