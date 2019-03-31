@@ -3,7 +3,9 @@
 return [
     'change' => 'change',
     'confirm' => 'confirm',
+    'date_format' => 'date format',
     'ip_address' => 'ip address',
+    'language' => 'language',
     'last_update' => 'last update',
     'new' => 'new',
     'new_f' => 'new',

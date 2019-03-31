@@ -3,6 +3,11 @@
 Contributions are **welcome** and will be fully **credited**. This page details how to 
 contribute and the expected code quality for all contributions.
 
+## Note
+
+##### Settings User
+To add other settings user, add the name in `$allowed_settings` property under `\App\Gateways\Settings\SettingsUserGateway` class.
+
 ## Pull Requests
 
 We accept contributions via Pull Requests.

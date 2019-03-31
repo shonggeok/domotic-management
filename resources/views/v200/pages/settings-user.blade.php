@@ -2,10 +2,18 @@
 @section('page_title', env('APP_NAME').' - '. ucfirst(__('common.settings')) .' '. ucfirst(__('common.user')))
 @php
     $timezone = 'UTC';
+    $date_format = 'd/m/Y';
+    $language = 'en';
     if (isset($settings_user) && count($settings_user)>0) {
         foreach ($settings_user as $settings) {
             if ($settings->option_key === 'timezone') {
                 $timezone = $settings->option_value;
+            }
+            if ($settings->option_key === 'date_format') {
+                $date_format = $settings->option_value;
+            }
+            if ($settings->option_key === 'language') {
+                $language = $settings->option_value;
             }
         }
     }
@@ -48,9 +56,33 @@
                                 }
                             @endphp
                         </select>
-                        <!--<input type="password" name="old_password" class="form-control {{ $errors->has('old_password') ? 'is-invalid' : '' }}">-->
+                    <!--<input type="password" name="old_password" class="form-control {{ $errors->has('old_password') ? 'is-invalid' : '' }}">-->
                     </div>
                 </div>
+                <!-- date format -->
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="date_format">{{ __('common.date_format') }}</label>
+                    <div class="col-md-9">
+                        <select class="form-control" name="date_format">
+                            <option value="{{ $date_format }}">{{ $date_format }}</option>
+                            <option value="d/m/Y">d/m/Y</option>
+                            <option value="m/d/Y">m/d/Y</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- /date format -->
+                <!-- language -->
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="language">{{ __('common.language') }}</label>
+                    <div class="col-md-9">
+                        <select class="form-control" name="language">
+                            <option value="{{ $language }}">{{ $language }}</option>
+                            <option value="en">en</option>
+                            <option value="it">it</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- /language -->
                 <button type="submit" class="btn btn-primary">{{ __('common.update') }}</button>
             </form>
         </div>

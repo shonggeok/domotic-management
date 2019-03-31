@@ -19,7 +19,9 @@ class SettingsUserGateway extends BaseGateway
      * @var array
      */
     private $allowed_settings = [
-        'timezone'
+        'timezone',
+        'language',
+        'date_format'
     ];
 
     /**
@@ -31,6 +33,11 @@ class SettingsUserGateway extends BaseGateway
         $this->setInterface($interface);
     }
 
+    /**
+     * @param array $data
+     * @param int $user_id
+     * @return bool
+     */
     public function createOrUpdate(array $data, int $user_id)
     {
         $status = false;
