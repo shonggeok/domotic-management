@@ -23,14 +23,13 @@ class GetUserSettings
         if (is_int($user_id)) {
             $interface = new SettingsUserRepository();
             $gateway = new SettingsUserGateway($interface);
-            //$gateway = app()->make('\App\Gateways\Settings\SettingsUserGateway');
             $user_settings = $gateway->getAllRecordsForAuthenticatedUser($user_id);
             $request->attributes->add([
                 'user_settings' => $user_settings
             ]);
         }
         $language = 'en';
-        if (isset($user_settings) && count($user_settings)>0) {
+        if (isset($user_settings) && count($user_settings) > 0) {
             foreach ($user_settings as $setting) {
                 if ($setting->option_key === 'language') {
                     $language = $setting->option_value;
