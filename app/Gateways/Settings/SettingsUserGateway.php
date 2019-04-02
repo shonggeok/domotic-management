@@ -42,7 +42,7 @@ class SettingsUserGateway extends BaseGateway
     {
         $status = false;
 
-        if (count($data)>0) {
+        if (count($data) > 0) {
             foreach ($data as $key => $value) {
                 if (in_array($key, $this->getAllowedSettings())) {
                     $this->getInterface()->createOrUpdate($key, $value, $user_id);
@@ -56,7 +56,7 @@ class SettingsUserGateway extends BaseGateway
 
     /**
      * @param int $user_id
-     * @return @return \Illuminate\Database\Eloquent\Collection $records
+     * @return \Illuminate\Database\Eloquent\Collection $records
      */
     public function getAllRecordsForAuthenticatedUser(int $user_id)
     {
