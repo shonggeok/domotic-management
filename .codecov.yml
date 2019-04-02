@@ -1,3 +1,0 @@
-ignore:
-  - "app/Http/Middleware/Authenticate.php"
-  - "app/Providers/BroadcastServiceProvider.php"
