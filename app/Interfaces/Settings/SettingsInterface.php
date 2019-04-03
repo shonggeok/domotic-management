@@ -6,7 +6,9 @@
  * Time: 08:04
  */
 
-namespace App\Interfaces;
+namespace App\Interfaces\Settings;
+
+use App\Interfaces\BaseInterface;
 
 interface SettingsInterface extends BaseInterface
 {

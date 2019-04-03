@@ -9,7 +9,7 @@
 namespace App\Gateways\Settings;
 
 use App\Gateways\BaseGateway;
-use App\Interfaces\SettingsInterface;
+use App\Interfaces\Settings\SettingsUserInterface;
 
 class SettingsUserGateway extends BaseGateway
 {
@@ -26,9 +26,9 @@ class SettingsUserGateway extends BaseGateway
 
     /**
      * SettingsUserGateway constructor.
-     * @param \App\Interfaces\SettingsInterface $interface
+     * @param \App\Interfaces\Settings\SettingsUserInterface $interface
      */
-    public function __construct(SettingsInterface $interface)
+    public function __construct(SettingsUserInterface $interface)
     {
         $this->setInterface($interface);
     }

@@ -9,9 +9,9 @@
 namespace App\Repositories\Settings;
 
 use App\Repositories\BaseRepository;
-use App\Interfaces\SettingsInterface;
+use App\Interfaces\Settings\SettingsUserInterface;
 
-class SettingsUserRepository extends BaseRepository implements SettingsInterface
+class SettingsUserRepository extends BaseRepository implements SettingsUserInterface
 {
     /**
      * @var string
