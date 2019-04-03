@@ -1,3 +1,6 @@
+# 0.3.1
++ Rename interface for settings user
+
 # 0.3.0
 + Add settings page for user
 + Retrieve user settings
