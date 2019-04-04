@@ -1,3 +1,6 @@
+# 0.4.0
++ Add Cloudflare settings
+
 # 0.3.1
 + Rename interface for settings user
 

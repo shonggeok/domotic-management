@@ -30,19 +30,19 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="api_key">API key</label>
                     <div class="col-md-9">
-                        <input type="text" name="api_key" value="{{ isset($settings_cloudflare->api_key) ? $settings_cloudflare->api_key : '' }}" class="form-control {{ $errors->has('api_key') ? 'is-invalid' : '' }}">
+                        <input type="password" name="api_key" value="{{ isset($settings_cloudflare[0]->api_key) ? $settings_cloudflare[0]->api_key : '' }}" class="form-control {{ $errors->has('api_key') ? 'is-invalid' : '' }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="email">{{ __('common.email') }}</label>
                     <div class="col-md-9">
-                        <input type="text" name="email" value="{{ isset($settings_cloudflare->email) ? $settings_cloudflare->email : '' }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}">
+                        <input type="text" name="email" value="{{ isset($settings_cloudflare[0]->email) ? $settings_cloudflare[0]->email : '' }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="domain_list">{{ __('cloudflare.domain_list') }}</label>
                     <div class="col-md-9">
-                        <input type="text" name="domain_list" value="{{ isset($settings_cloudflare->domain_list) ? $settings_cloudflare->domain_list : '' }}" class="form-control {{ $errors->has('domain_list') ? 'is-invalid' : '' }}">
+                        <input type="text" name="domain_list" value="{{ isset($settings_cloudflare[0]->domain_list) ? $settings_cloudflare[0]->domain_list : '' }}" class="form-control {{ $errors->has('domain_list') ? 'is-invalid' : '' }}">
                     </div>
                 </div>
                 <!-- /date format -->
