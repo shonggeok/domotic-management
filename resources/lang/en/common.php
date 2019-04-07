@@ -4,6 +4,7 @@ return [
     'change' => 'change',
     'confirm' => 'confirm',
     'date_format' => 'date format',
+    'email' => 'email',
     'ip_address' => 'ip address',
     'language' => 'language',
     'last_update' => 'last update',

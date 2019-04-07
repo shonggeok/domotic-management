@@ -1,4 +1,4 @@
-# Domotic Management - 0.3.1
+# Domotic Management - 0.4.0
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sineverba/domotic-management/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sineverba/domotic-management/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/sineverba/domotic-management/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sineverba/domotic-management/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/sineverba/domotic-management/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sineverba/domotic-management/build-status/master) [![Build Status](https://travis-ci.org/sineverba/domotic-management.svg?branch=master)](https://travis-ci.org/sineverba/domotic-management) [![Coverage Status](https://coveralls.io/repos/github/sineverba/domotic-management/badge.svg?branch=master)](https://coveralls.io/github/sineverba/domotic-management?branch=master) [![codecov](https://codecov.io/gh/sineverba/domotic-management/branch/master/graph/badge.svg)](https://codecov.io/gh/sineverba/domotic-management) [![StyleCI](https://github.styleci.io/repos/177451340/shield?branch=master)](https://github.styleci.io/repos/177451340)
 
@@ -19,8 +19,10 @@ It provides several features. See wiki for more details.
 
 Default login data:
 
-- Username: `admin`
+- Username: `domotic`
 - Password: `password`
+
+You will be prompt to change these at first login.
 
 #### Contributions
 All contributes are welcome! See CONTRIBUTING.md for more informations.

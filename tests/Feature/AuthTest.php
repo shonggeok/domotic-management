@@ -74,11 +74,14 @@ class AuthTest extends TestCase
      */
     public function test_successfully_submit_redirect_dashboard()
     {
-        $this->withoutExceptionHandling();
-        factory(User::class)->create();
+        //$this->withoutExceptionHandling();
+        $user_data = [
+            'last_password_change' => null,
+        ];
+        factory(User::class)->create($user_data);
         $data = [
-            'username' => 'admin',
-            'password' => 'password'
+            'username' => 'domotic',
+            'password' => 'password',
         ];
         $response = $this->post(Route('login'),$data);
         $response->assertStatus(302);

@@ -1,3 +1,7 @@
+# 0.4.0
++ Add Cloudflare settings
++ Change User schema table
+
 # 0.3.1
 + Rename interface for settings user
 
