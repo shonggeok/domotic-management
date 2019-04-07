@@ -31,6 +31,7 @@ class PasswordRepository extends BaseRepository implements PasswordInterface
         if ($is_valid === true) {
             $user = $this->find($user_id);
             $user->password = Hash::make($data[ 'new_password' ]);
+            $user->last_password_change = now();
             $user->save();
         }
         return $is_valid;
