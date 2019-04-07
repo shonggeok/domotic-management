@@ -19,8 +19,10 @@ It provides several features. See wiki for more details.
 
 Default login data:
 
-- Username: `admin`
+- Username: `domotic`
 - Password: `password`
+
+You will be prompt to change these at first login.
 
 #### Contributions
 All contributes are welcome! See CONTRIBUTING.md for more informations.
