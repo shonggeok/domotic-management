@@ -1,3 +1,6 @@
+# 0.5.0
++ Moved commands test under specific directory/namespace
+
 # 0.4.0
 + Add Cloudflare settings
 + Change User schema table
