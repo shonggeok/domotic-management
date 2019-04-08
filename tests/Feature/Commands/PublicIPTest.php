@@ -6,7 +6,7 @@
  * Time: 09:45
  */
 
-namespace Tests\Feature;
+namespace Tests\Feature\Commands;
 
 
 use App\Console\Commands\UpdatePublicIP;
