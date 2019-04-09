@@ -45,6 +45,187 @@ class CloudflareTest extends TestCase
     }
 
     /**
+     * Test can update record
+     *
+     * @returns void
+     */
+    public function test_can_update_record()
+    {
+        $user_id = 1;
+        $user_data = [
+            'id' => $user_id,
+        ];
+        factory(User::class)->create($user_data);
+        $key = '123456789';
+        $email = 'info@example.com';
+        $domain_list = 'example.com';
+        $settings_data = [
+            'user_id' => $user_id,
+            'api_key' => $key,
+            'email' => $email,
+            'domain_list' => $domain_list
+        ];
+        factory(SettingsCloudflareRepository::class)->create($settings_data);
+        $gateway = $this->app->make('App\Gateways\CloudflareGateway');
+        $settings = $gateway->getUserData($user_id);
+        $fixture = dirname(__DIR__,1).'/Fixtures/Cloudflare/Dns/update_record.json';
+        $this->assertFileExists($fixture);
+        $body = file_get_contents($fixture);
+        $this->assertTrue(is_string($body));
+
+        // Create body per as API
+        $body = json_decode($body);
+
+        $mock = Mockery::mock('Cloudflare\API\Endpoints\DNS');
+        $mock->shouldReceive('updateRecordDetails')
+            ->andReturn($body)
+            ->mock();
+
+        $zone_id = '023e105f4ecef8ad9ca31a8372d0c353';
+        $record_id = '372e67954025e0ba6aaa6d586b9e0b59';
+        $update_record = $gateway->updateRecord($mock, $zone_id, $record_id, 'A', $settings, '1.2.3.4');
+        $this->assertEquals($record_id, $update_record->result->id);
+    }
+
+    /**
+     * Test can create record
+     *
+     * @returns void
+     */
+    public function test_can_create_record()
+    {
+        $user_id = 1;
+        $user_data = [
+            'id' => $user_id,
+        ];
+        factory(User::class)->create($user_data);
+        $key = '123456789';
+        $email = 'info@example.com';
+        $domain_list = 'example.com';
+        $settings_data = [
+            'user_id' => $user_id,
+            'api_key' => $key,
+            'email' => $email,
+            'domain_list' => $domain_list
+        ];
+        factory(SettingsCloudflareRepository::class)->create($settings_data);
+        $gateway = $this->app->make('App\Gateways\CloudflareGateway');
+        $settings = $gateway->getUserData($user_id);
+        $fixture = dirname(__DIR__,1).'/Fixtures/Cloudflare/Dns/create_record.json';
+        $this->assertFileExists($fixture);
+        $body = file_get_contents($fixture);
+        $this->assertTrue(is_string($body));
+
+        // Create body per as API
+        $body = json_decode($body);
+        if (isset($body->result->id)) {
+            $body = true;
+        } else {
+            $body = false;
+        }
+
+        $mock = Mockery::mock('Cloudflare\API\Endpoints\DNS');
+        $mock->shouldReceive('addRecord')
+            ->andReturn($body)
+            ->mock();
+
+        $zone_id = '023e105f4ecef8ad9ca31a8372d0c353';
+        $add_record = $gateway->addRecord($mock, $zone_id, 'A', $settings, '1.2.3.4');
+        $this->assertEquals($body, $add_record);
+    }
+
+    /**
+     * Test we can get id of dns
+     *
+     * @return void
+     */
+    public function test_can_get_dns_id()
+    {
+        $user_id = 1;
+        $user_data = [
+            'id' => $user_id,
+        ];
+        factory(User::class)->create($user_data);
+        $key = '123456789';
+        $email = 'info@example.com';
+        $domain_list = 'example.com';
+        $settings_data = [
+            'user_id' => $user_id,
+            'api_key' => $key,
+            'email' => $email,
+            'domain_list' => $domain_list
+        ];
+        factory(SettingsCloudflareRepository::class)->create($settings_data);
+        $gateway = $this->app->make('App\Gateways\CloudflareGateway');
+
+        $fixture = dirname(__DIR__,1).'/Fixtures/Cloudflare/Dns/list_record.json';
+        $this->assertFileExists($fixture);
+        $body = file_get_contents($fixture);
+        $this->assertTrue(is_string($body));
+
+        // Create body per as API
+        $body = json_decode($body);
+        $body = (object)['result' => $body->result, 'result_info' => $body->result_info];
+
+        $mock = Mockery::mock('Cloudflare\API\Endpoints\DNS');
+        $mock->shouldReceive('listRecords')
+            ->andReturn($body)
+            ->mock();
+
+        $id = '372e67954025e0ba6aaa6d586b9e0b59';
+        $zone_id = '023e105f4ecef8ad9ca31a8372d0c353';
+        $id_dns = $gateway->getIdDns($mock, $zone_id, 'A');
+        $this->assertEquals($id, $id_dns);
+
+
+    }
+
+    /**
+     * Test we can get list record
+     *
+     * @return void
+     */
+    public function test_can_get_list_record()
+    {
+        $user_id = 1;
+        $user_data = [
+            'id' => $user_id,
+        ];
+        factory(User::class)->create($user_data);
+        $key = '123456789';
+        $email = 'info@example.com';
+        $domain_list = 'example.com';
+        $settings_data = [
+            'user_id' => $user_id,
+            'api_key' => $key,
+            'email' => $email,
+            'domain_list' => $domain_list
+        ];
+        factory(SettingsCloudflareRepository::class)->create($settings_data);
+        $gateway = $this->app->make('App\Gateways\CloudflareGateway');
+
+        $fixture = dirname(__DIR__,1).'/Fixtures/Cloudflare/Dns/list_record.json';
+        $this->assertFileExists($fixture);
+        $body = file_get_contents($fixture);
+        $this->assertTrue(is_string($body));
+
+        // Create body per as API
+        $body = json_decode($body);
+        $body = (object)['result' => $body->result, 'result_info' => $body->result_info];
+
+        $mock = Mockery::mock('Cloudflare\API\Endpoints\DNS');
+        $mock->shouldReceive('listRecords')
+            ->andReturn($body)
+            ->mock();
+
+        $zone_id = '023e105f4ecef8ad9ca31a8372d0c353';
+        $list_record = $gateway->listRecords($mock, $zone_id);
+        $this->assertEquals($body, $list_record);
+
+
+    }
+
+    /**
      * Test we can get zone ID
      *
      * @return void
@@ -86,6 +267,19 @@ class CloudflareTest extends TestCase
     }
 
     /***
+     * Test we can create dns endpoint
+     *
+     * @return void
+     */
+    public function test_can_create_dns_endpoint()
+    {
+        $gateway = $this->app->make('App\Gateways\CloudflareGateway');
+        $endpoint = $gateway->setDnsEndpoint($this->getAdapterMock());
+        $this->assertInstanceOf('\Cloudflare\API\Endpoints\Dns',$endpoint);
+
+    }
+
+    /***
      * Test we can create zones endpoint
      *
      * @return void
@@ -93,8 +287,8 @@ class CloudflareTest extends TestCase
     public function test_can_create_zones_endpoint()
     {
         $gateway = $this->app->make('App\Gateways\CloudflareGateway');
-        $zones_endpoint = $gateway->setZonesEndpoint($this->getAdapterMock());
-        $this->assertInstanceOf('\Cloudflare\API\Endpoints\Zones',$zones_endpoint);
+        $endpoint = $gateway->setZonesEndpoint($this->getAdapterMock());
+        $this->assertInstanceOf('\Cloudflare\API\Endpoints\Zones',$endpoint);
 
     }
 
