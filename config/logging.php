@@ -36,14 +36,14 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['daily' , 'single'],
             'ignore_exceptions' => false,
         ],
 
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
-            'level' => 'debug',
+            'level' => 'info',
         ],
 
         'daily' => [
