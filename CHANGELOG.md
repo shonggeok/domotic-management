@@ -1,6 +1,8 @@
 # 0.5.0
 + Moved commands test under specific directory/namespace
 + Set all update logic for Cloudflare. Need to do the cron command
++ Implements log for cron commands (see #51)
++ Set null to User values (see #46)
 
 # 0.4.0
 + Add Cloudflare settings

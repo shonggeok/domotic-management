@@ -9,6 +9,7 @@
 namespace App\Gateways;
 
 use App\Interfaces\PublicIPInterface;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Ipify\Exception\ConnectionError;
 use Ipify\Exception\ServiceError;
@@ -95,7 +96,10 @@ class PublicIPGateway extends BaseGateway
             if (count($records) === 1) {
                 $data[ 'previous_ip_address' ] = $records[ 0 ]->ip_address;
             }
-            $this->getInterface()->createOrUpdate($data);
+            $model = $this->getInterface()->createOrUpdate($data);
+            if (count($model->getChanges())>0) {
+                Log::info('New public IP detected: '.$data[ 'ip_address' ]);
+            }
             return true;
         }
     }
