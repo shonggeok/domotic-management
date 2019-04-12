@@ -37,7 +37,7 @@ class SettingsCloudflareGateway extends BaseGateway
     /**
      * @param array $data
      * @param int $user_id
-     * @return array|bool
+     * @return \Illuminate\Support\MessageBag|bool
      */
     public function createOrUpdate(array $data, int $user_id)
     {
